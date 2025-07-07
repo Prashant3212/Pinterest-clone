@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinterest Sign Up</title>
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+</head>
+<body>
+     <a href="/" class="logo">
+                <i class="fab fa-pinterest"></i>
+                Pinterest
+            </a>
+    <div class="container-body">
+        <div class="container">
+            <div class="content">
+                <img src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png" alt="pin logo" class="img1" />
+                <h1 class="header">Sign up</h1>
+                <p class="subtitle">make account to see more</p>
+
+                <form action="/register" method="post">
+                    <input type="text" name="username" placeholder="Username" class="detail" required>
+                    <input type="text" name="fullname" placeholder="Fullname" class="detail" required>
+                    <input type="email" name="email" placeholder="Email" class="detail" required>
+                    <input type="password" name="password" placeholder="Password" class="detail" required>
+                    <input type="submit" class="btn int" value="Continue">
+                </form>
+                
+                <a href="/forget">Forgot your password?</a>
+                
+                <p class="or">OR</p>
+                
+                <button class="btn fbk">
+                    <i class="fab fa-facebook"></i>
+                    Continue with Facebook
+                </button>
+                
+                <button class="btn ggl">
+                    <i class="fab fa-google"></i>
+                    Continue with Google
+                </button>
+
+                <footer>
+                    <p>
+                        By continuing, you agree to Pinterest's
+                        <b>Terms of Service, Privacy policy.</b>
+                    </p>
+                    <hr>
+                    <a href="/login">already on Pinterest yet? login</a>
+                </footer>
+            </div>
+        </div>
+        
+    </div>
+    <a href="/login" class="upbtn">Login</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const signupBtn = document.querySelector('.int');
+            const formInputs = document.querySelectorAll('.detail');
+            
+            signupBtn.addEventListener('click', function(e) {
+                let isValid = true;
+                
+                formInputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        isValid = false;
+                        input.style.borderColor = '#e60023';
+                    } else {
+                        input.style.borderColor = '#e1e1e1';
+                    }
+                });
+                
+                if (!isValid) {
+                    e.preventDefault();
+                    alert('Please fill in all required fields.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

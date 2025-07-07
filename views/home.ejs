@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinterest Home</title>
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="/" style="text-decoration: none;">
+                <div class="logo">
+                <i class="fa-brands fa-pinterest"></i>
+                <span>Pinterest</span>
+            </div>
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for ideas...">
+            </div>
+            <div class="nav-icons">
+                <a href="/home"><i class="fas fa-home"></i></a>
+                <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+                <a href="/profile" style="text-decoration: none;" class="user-avatar">M</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Categories -->
+    <div class="categories">
+        <div class="categories-container">
+            <div class="category active">All</div>
+            <div class="category">Home Decor</div>
+            <div class="category">Travel</div>
+            <div class="category">Food & Drink</div>
+            <div class="category">Art & Design</div>
+            <div class="category">Fashion</div>
+            <div class="category">Technology</div>
+            <div class="category">DIY & Crafts</div>
+            <div class="category">Health & Fitness</div>
+            <div class="category">Photography</div>
+        </div>
+    </div>
+
+    <!-- Grid Container for Cards -->
+    <div class="grid-container">
+        
+        <!-- Card 1 -->
+                  <% if (user && user.post && user.post.length > 0) { %>
+  <% user.post.forEach(function(post) { %>
+    <div class="card">
+        <img src="/images/<%= post.image %>" alt="Post Image" class="card-image">
+      <div class="card-overlay">
+            <h3 class="card-title"><%= post.postText || 'All Designs' %></h3>
+            <div class="card-author">
+                        <div class="author-avatar">m</div>
+                        <%= user.fullName %>
+                    </div>
+            <div class="card-actions"> 
+                <div class="card-btn save-btn">
+                    <i class="fas fa-thumbtack"></i>
+                    Save
+                </div>
+            </div>
+        </div>
+    </div>
+  <% }) %>
+<% } %>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mountain lake" class="card-image">
+            <div class="card-overlay">
+                <h3 class="card-title">Mountain Lake Reflections</h3>
+                <div class="card-author">
+                    <div class="author-avatar">J</div>
+                    James Wilson
+                </div>
+                <div class="card-actions">
+                     
+                    <div class="card-btn save-btn">
+                        <i class="fas fa-thumbtack"></i>
+                        Save
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Ocean waves" class="card-image">
+            <div class="card-overlay">
+                <h3 class="card-title">Ocean Waves at Sunset</h3>
+                <div class="card-author">
+                    <div class="author-avatar">S</div>
+                    Sarah Johnson
+                </div>
+                <div class="card-actions">
+                     
+                    <div class="card-btn save-btn">
+                        <i class="fas fa-thumbtack"></i>
+                        Save
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Forest path" class="card-image">
+            <div class="card-overlay">
+                <h3 class="card-title">Misty Forest Path</h3>
+                <div class="card-author">
+                    <div class="author-avatar">R</div>
+                    Robert Chen
+                </div>
+                <div class="card-actions">
+                     
+                    <div class="card-btn save-btn">
+                        <i class="fas fa-thumbtack"></i>
+                        Save
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Snowy mountains" class="card-image">
+            <div class="card-overlay">
+                <h3 class="card-title">Snowy Mountain Peaks</h3>
+                <div class="card-author">
+                    <div class="author-avatar">E</div>
+                    Emma Davis
+                </div>
+                <div class="card-actions">
+                     
+                    <div class="card-btn save-btn">
+                        <i class="fas fa-thumbtack"></i>
+                        Save
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Lake view" class="card-image">
+            <div class="card-overlay">
+                <h3 class="card-title">Lakeside Morning</h3>
+                <div class="card-author">
+                    <div class="author-avatar">T</div>
+                    Thomas Lee
+                </div>
+                <div class="card-actions">
+                     
+                    <div class="card-btn save-btn">
+                        <i class="fas fa-thumbtack"></i>
+                        Save
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Green landscape" class="card-image">
+            <div class="card-overlay">
+                <h3 class="card-title">Tropical Paradise</h3>
+                <div class="card-author">
+                    <div class="author-avatar">L</div>
+                    Lisa Martinez
+                </div>
+                <div class="card-actions">
+                     
+                    <div class="card-btn save-btn">
+                        <i class="fas fa-thumbtack"></i>
+                        Save
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mountain peaks" class="card-image">
+            <div class="card-overlay">
+                <h3 class="card-title">Alpine Majesty</h3>
+                <div class="card-author">
+                    <div class="author-avatar">K</div>
+                    Kevin Brown
+                </div>
+                <div class="card-actions">
+                     
+                    <div class="card-btn save-btn">
+                        <i class="fas fa-thumbtack"></i>
+                        Save
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Waterfall" class="card-image">
+            <div class="card-overlay">
+                <h3 class="card-title">Waterfall Wonder</h3>
+                <div class="card-author">
+                    <div class="author-avatar">M</div>
+                    Maria Garcia
+                </div>
+                <div class="card-actions">
+                     
+                    <div class="card-btn save-btn">
+                        <i class="fas fa-thumbtack"></i>
+                        Save
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Forest" class="card-image">
+            <div class="card-overlay">
+                <h3 class="card-title">Enchanted Forest</h3>
+                <div class="card-author">
+                    <div class="author-avatar">D</div>
+                    David Kim
+                </div>
+                <div class="card-actions">
+                     
+                    <div class="card-btn save-btn">
+                        <i class="fas fa-thumbtack"></i>
+                        Save
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sunset" class="card-image">
+            <div class="card-overlay">
+                <h3 class="card-title">Golden Sunset</h3>
+                <div class="card-author">
+                    <div class="author-avatar">A</div>
+                    Anna Wilson
+                </div>
+                <div class="card-actions">
+                     
+                    <div class="card-btn save-btn">
+                        <i class="fas fa-thumbtack"></i>
+                        Save
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 11 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Desert" class="card-image">
+            <div class="card-overlay">
+                <h3 class="card-title">Desert Landscape</h3>
+                <div class="card-author">
+                    <div class="author-avatar">P</div>
+                    Paul Walker
+                </div>
+                <div class="card-actions">
+                     
+                    <div class="card-btn save-btn">
+                        <i class="fas fa-thumbtack"></i>
+                        Save
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 12 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Foggy mountains" class="card-image">
+            <div class="card-overlay">
+                <h3 class="card-title">Misty Mountains</h3>
+                <div class="card-author">
+                    <div class="author-avatar">S</div>
+                    Sophia Lee
+                </div>
+                <div class="card-actions">
+                     
+                    <div class="card-btn save-btn">
+                        <i class="fas fa-thumbtack"></i>
+                        Save
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating action button -->
+    <!-- <div class="fab">
+        <i class="fa-solid fa-plus"></i>
+    </div> -->
+
+    <!-- Footer -->
+    <footer>
+        <!-- <div class="footer-logo">
+            <i class="fab fa-pinterest"></i>
+        </div> -->
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Business</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+            <a href="#">Developers</a>
+            <a href="#">Help</a>
+        </div>
+        
+        <!-- <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div> -->
+        
+        <div class="copyright">
+            &copy; 2023 Pinterest Clone | Designed with ❤️ By Prashant Chauahn 
+        </div>
+    </footer>
+
+    <script>
+        // Category selection
+        document.querySelectorAll('.category').forEach(category => {
+            category.addEventListener('click', function() {
+                document.querySelectorAll('.category').forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Save button functionality
+        document.querySelectorAll('.save-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-check"></i> Saved';
+                
+                // Revert after a delay
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                }, 2000);
+            });
+        });
+
+        // Card click functionality
+        // document.querySelectorAll('.card').forEach(card => {
+        //     card.addEventListener('click', function() {
+        //         const title = this.querySelector('.card-title').textContent;
+        //         alert(`Opening details for: ${title}`);
+        //     });
+        // });
+
+        // Floating action button
+        document.querySelector('.fab').addEventListener('click', function() {
+            alert('Create new pin');
+        });
+    </script>
+</body>
+</html>
